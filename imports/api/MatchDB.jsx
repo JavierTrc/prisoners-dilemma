@@ -2,6 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 export const Matches = new Mongo.Collection('Matches');
 
+//Bastante interesante como implementaron la busqueda de matches
 Meteor.methods({
     'matches.findMatch'(username) {
         let match = Matches.findOne({ user1: { $ne: null }, user2: null });
